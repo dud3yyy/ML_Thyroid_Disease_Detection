@@ -29,7 +29,7 @@ class ZipDataIngestor(DataIngestor):
             raise ValueError(f"There are {len(csv_files)} in this folder. Please specify which one to use!")
         
         csv_file_path = os.path.join("extracted_data", csv_files[0])
-        print('here',csv_file_path)
+
         df = pd.read_csv(csv_file_path)
 
         return df
@@ -38,6 +38,7 @@ class DataIngestorFactory:
     @staticmethod
     def get_data_ingestor(file_extension:str) -> DataIngestor:
         """Static method used for all types of extensions"""
+
         if file_extension == ".zip":
             return ZipDataIngestor()
         else:
