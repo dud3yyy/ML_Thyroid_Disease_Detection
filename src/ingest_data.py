@@ -37,7 +37,7 @@ class ZipDataIngestor(DataIngestor):
 class DataIngestorFactory:
     @staticmethod
     def get_data_ingestor(file_extension:str) -> DataIngestor:
-        """Static method used for all types of extenstions"""
+        """Static method used for all types of extensions"""
         if file_extension == ".zip":
             return ZipDataIngestor()
         else:
